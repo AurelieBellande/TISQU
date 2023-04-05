@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     bool IsGrounded = false;
-    *//*int CountJump = 1;*//*
+    /*int CountJump = 1;*/
     [SerializeField] int maxHealth;
     private int currentHealth;
     public HealthManager healthBar;
@@ -40,19 +40,19 @@ public class EnemyHealth : MonoBehaviour
         {
             horizontal_value *= -1;
         }
-        *//*if (collision.tag == "Player")
+       /* if (collision.tag == "Player")
         {
             Player scriptref = collision.gameObject.GetComponent<Player>();
             scriptref.TakeDamage(25);
             scriptref.StartCoroutine(ShowBar());
 
-        }*//*
+        }*/
 
         //ground detect
         if (collision.tag == "Ground")
         {
             IsGrounded = true;
-            
+
         }
 
         if (collision.tag == "Player")
@@ -63,12 +63,12 @@ public class EnemyHealth : MonoBehaviour
         }
 
 
-       *//* if (Player.transform.name == "Player")
-            {
+       /* if (Player.transform.name == "Player")
+        {
             TakeDamage(25);
             StartCoroutine(ShowBar());
 
-            }*//*
+        }*/
     }
     public void TakeDamage(int damage)
     {
@@ -76,7 +76,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-   *//* private void OnTriggerEnter2D(Collider2D Player)
+    /*private void OnTriggerEnter2D(Collider2D Player)
     {
 
         if (Player.transform.name == "Player")
@@ -85,7 +85,7 @@ public class EnemyHealth : MonoBehaviour
             StartCoroutine(ShowBar());
 
         }
-    }*//*
+    }*/
     private IEnumerator ShowBar()
     {
         HEALTHBAR.SetActive(true);
@@ -94,4 +94,3 @@ public class EnemyHealth : MonoBehaviour
     }
 
 }
-*/

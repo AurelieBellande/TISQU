@@ -304,45 +304,14 @@ GameObject:
   - component: {fileID: 51871257}
   - component: {fileID: 51871256}
   - component: {fileID: 51871255}
-  - component: {fileID: 51871254}
-  - component: {fileID: 51871253}
+  - component: {fileID: 51871259}
   m_Layer: 7
-  m_Name: Enem2
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &51871253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51871252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfa96fc18ef1ac41a264f6f79a159e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &51871254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51871252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a7e86d5c7a42941a82304cef8171c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  healthBar: {fileID: 727621555}
-  HEALTHBAR: {fileID: 727621554}
-  Player: {fileID: 0}
-  moveSpeed_horizontal: 306.6
-  smooth_time: 0.5
 --- !u!50 &51871255
 Rigidbody2D:
   serializedVersion: 4
@@ -448,6 +417,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51871259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51871252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5982b8b380e10294d8d58c8812e44187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7.58
+  distance: 2
+  groundDetection: {fileID: 729648243}
+  target: {fileID: 340951926}
 --- !u!1 &100424346
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +945,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c63a06745a53e4195ced63bbe818b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  isInvincible: 0
+  graphics: {fileID: 0}
+  invincibilityFlashDelay: 0.2
+  onWater: 0
+  healthBar: {fileID: 727621555}
+  hitboxDMG: {fileID: 1186431849}
 --- !u!1 &453488143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1619,7 @@ GameObject:
   - component: {fileID: 729648242}
   - component: {fileID: 729648241}
   m_Layer: 0
-  m_Name: Square
+  m_Name: SquareA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

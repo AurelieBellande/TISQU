@@ -3,12 +3,14 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
+    /*float V = 0,5;*/
     [SerializeField] public int maxHealth = 100;
     public int currentHealth;
     public bool isInvincible = false;
     public SpriteRenderer graphics;
     public float invincibilityFlashDelay = 0.2f;
 
+    public bool onWater = false;
     public HealthManager healthBar;
 
     [SerializeField] GameObject hitboxDMG;
@@ -44,8 +46,6 @@ public class PlayerHealth : MonoBehaviour
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
-
-
         }
     }
 
@@ -71,19 +71,40 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Coroutine2");
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.tag == "water")
+        {
+            onWater = true;
+            StartCoroutine(WaterDamage());
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.tag == "water")
+        {
+            onWater = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision){
 
         if (collision.tag == "enemy")
         {
             currentHealth -= 10;
         }
+    }
 
-        if (collision.tag == "water")
+    public IEnumerator WaterDamage()
+    {
+
+        currentHealth -= 10;
+        yield return new WaitForSeconds(1.5f);
+        if (onWater)
         {
-            currentHealth -= 1;
+            StartCoroutine(WaterDamage());
         }
-
-
     }
 }
