@@ -17,28 +17,30 @@ public class Enemy2ai : MonoBehaviour
     public Transform groundDetection;
     public Transform target;
 
-
-
+  
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.y < 1)
         {
             transform.position = new Vector3(transform.position.x, 1, transform.position.z);
         }
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-        /*if(Input.GetButtonDown("R"))
+
+       /* if(Input.GetButtonDown("R"))
         {
             
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }*/
+
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
+        
         if (groundInfo.collider == false)
         {
             if (movingRight == true)
@@ -53,7 +55,5 @@ public class Enemy2ai : MonoBehaviour
             }
         }
     }
-
-
 
 }

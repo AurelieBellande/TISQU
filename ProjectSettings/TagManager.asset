@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - healthbar
   - water
+  - spechal grnd
   layers:
   - Default
   - TransparentFX

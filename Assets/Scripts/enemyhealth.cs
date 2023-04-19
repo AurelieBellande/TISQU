@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class EnemyHealth : MonoBehaviour
+public class enemyHealth : MonoBehaviour
 {
 
     bool IsGrounded = false;
