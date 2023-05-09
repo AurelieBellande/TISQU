@@ -253,19 +253,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jetpackForce: 30
   hovertime: 3
-  IsGrounded: 0
-  CountJump: 2
+  jumpForce: 10
   moveSpeed_horizontal: 400
   is_jumping: 0
   can_jump: 0
-  smooth_time: 0.5
-  maxHealth: 100
-  currentHealth: 0
-  isInvincible: 0
-  graphics: {fileID: 0}
-  invincibilityFlashDelay: 0.2
-  healthBar: {fileID: 0}
-  hitboxDMG: {fileID: 0}
 --- !u!50 &340951923
 Rigidbody2D:
   serializedVersion: 4
@@ -523,7 +514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.64, y: 2.35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &951990177
@@ -561,9 +552,8 @@ MonoBehaviour:
   maxHealth: 102
   healthBar: {fileID: 0}
   HEALTHBAR: {fileID: 0}
+  Player: {fileID: 0}
   moveSpeed_horizontal: 400
-  is_jumping: 0
-  can_jump: 0
   smooth_time: 0.5
 --- !u!50 &951990179
 Rigidbody2D:
@@ -989,8 +979,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426624098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7, y: -4.78, z: 0}
-  m_LocalScale: {x: 35.87067, y: 1, z: 1}
+  m_LocalPosition: {x: 29.2096, y: -4.78, z: 0}
+  m_LocalScale: {x: 84.89153, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
