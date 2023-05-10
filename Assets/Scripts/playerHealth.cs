@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour
+public class playerHealth : MonoBehaviour
 {
     /*float V = 0,5;*/
     [SerializeField] public int maxHealth = 100;
@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public bool onWater = false;
     public HealthManager healthBar;
 
+    public GameObject SpawnPoint;
     [SerializeField] GameObject hitboxDMG;
 
     // Start is called before the first frame update
@@ -106,5 +107,19 @@ public class PlayerHealth : MonoBehaviour
         {
             StartCoroutine(WaterDamage());
         }
+    }
+
+    void OnTriggerEnter (Collider col)
+    {
+        if(col.transform.tag == "enemy")
+        {
+            this.transform.position = SpawnPoint.transform.position;
+        }
+
+        if (col.transform.tag == "HP")
+        {
+            currentHealth += 20;
+        }
+
     }
 }

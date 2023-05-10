@@ -10,6 +10,7 @@ TagManager:
   - healthbar
   - water
   - spechal grnd
+  - HP
   layers:
   - Default
   - TransparentFX
