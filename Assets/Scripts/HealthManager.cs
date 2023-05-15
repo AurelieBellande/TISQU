@@ -7,7 +7,7 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField]public Image healthBar;
     [SerializeField] public float healthAmount = 100f;
-
+    
     public Slider slider;
 
     // Start is called before the first frame update
@@ -19,12 +19,12 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if (healthAmount <= 0)
+        if (healthAmount <= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
-        }*/
+        }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(20);
         }
@@ -33,6 +33,8 @@ public class HealthManager : MonoBehaviour
         {
             Heal(5);
         }
+
+       
 
     }
 
@@ -64,4 +66,6 @@ public class HealthManager : MonoBehaviour
         // indique le nombre de points de vie a afficher
         slider.value = health;
     }
+
+
 }
