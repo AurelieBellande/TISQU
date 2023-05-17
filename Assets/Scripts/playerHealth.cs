@@ -5,6 +5,7 @@ public class playerHealth : MonoBehaviour
 {
     /*float V = 0,5;*/
 
+    /*[SerializeField] public float healthAmount = 100f;*/
     [SerializeField] public int maxHealth = 100;
     public int currentHealth;
     public bool isInvincible = false;
@@ -142,8 +143,8 @@ public class playerHealth : MonoBehaviour
 
     public IEnumerator WaterDamage()
     {
-
-        currentHealth -= 10;
+        TakeDamage(10);
+        /*currentHealth -= 10;*/
         yield return new WaitForSeconds(1.5f);
         if (onWater)
         {
@@ -153,9 +154,9 @@ public class playerHealth : MonoBehaviour
 
     public IEnumerator Spooderdmg()
     {
-
-        currentHealth -= 15;
-        yield return new WaitForSeconds(1f);
+        TakeDamage(20);
+        /*currentHealth -= 15;*/
+        yield return new WaitForSeconds(2f);
         if (onspider)
         {
             StartCoroutine(Spooderdmg());

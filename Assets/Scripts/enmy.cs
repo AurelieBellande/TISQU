@@ -8,6 +8,7 @@ public class enmy : MonoBehaviour
     Vector3 targetPos;
     [SerializeField] GameObject ways;
     [SerializeField] Transform[] wayPoints;
+    public HealthManager healthBar2;
 
     int pointIndex;
     int pointCount;
