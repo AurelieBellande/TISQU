@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField]public Image healthBar;
+    /*[SerializeField]public Image healthBar;
     [SerializeField] public float healthAmount = 100f;
-    
+    */
     public Slider slider;
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthAmount <= 0)
+        /*if (healthAmount <= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
         }
@@ -32,7 +32,7 @@ public class HealthManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Heal(5);
-        }
+        }*/
 
       /* if (collision.tag == "enemy")
         {
@@ -41,7 +41,7 @@ public class HealthManager : MonoBehaviour
 
     }
 
-    public void TakeDamage(float damage)
+   /* public void TakeDamage(float damage)
     {
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / 100;
@@ -55,7 +55,7 @@ public class HealthManager : MonoBehaviour
         healthBar.fillAmount = healthAmount / 100f;
      
 
-    }
+    }*/
 
     public void SetMaxHealth(int health)
     {
@@ -69,6 +69,5 @@ public class HealthManager : MonoBehaviour
         // indique le nombre de points de vie a afficher
         slider.value = health;
     }
-
 
 }

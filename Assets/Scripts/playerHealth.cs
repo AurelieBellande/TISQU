@@ -4,12 +4,14 @@ using System.Collections;
 public class playerHealth : MonoBehaviour
 {
     /*float V = 0,5;*/
+
     [SerializeField] public int maxHealth = 100;
     public int currentHealth;
     public bool isInvincible = false;
-    public SpriteRenderer graphics;
+    /*public SpriteRenderer graphics;*/
     public float invincibilityFlashDelay = 0.2f;
 
+    public bool onspider = false;
     public bool onWater = false;
     public HealthManager healthBar;
 
@@ -23,8 +25,7 @@ public class playerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-       /* currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);*/
+      
     }
 
     // Update is called once per frame
@@ -32,12 +33,15 @@ public class playerHealth : MonoBehaviour
     {
 
         // test pour voir si ca fonctionne
-       /* if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             TakeDamage(20);
         }
-*/
 
+        if (currentHealth <= 0)
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -50,16 +54,30 @@ public class playerHealth : MonoBehaviour
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
         }
+
+        /*currentHealth -= damage;
+        healthBar.fillAmount = currentHealth / 100;*/
+
     }
+
+    /*public void Heal(int healingAmount)
+    {
+        currentHealth  += healingAmount;
+        currentHealth  = Mathf.Clamp(currentHealth , 0, 100);
+
+        healthBar.fillAmount = currentHealth  / 100f;
+
+
+    }*/
 
     public IEnumerator InvincibilityFlash()
     {
         while (isInvincible)
         {
             hitboxDMG.SetActive(false);
-            graphics.color = new Color(1f, 1f, 1f, 0f);
+           /* graphics.color = new Color(1f, 1f, 1f, 0f);*/
             yield return new WaitForSeconds(invincibilityFlashDelay);
-            graphics.color = new Color(1f, 1f, 1f, 1f);
+            /*graphics.color = new Color(1f, 1f, 1f, 1f);*/
             yield return new WaitForSeconds(invincibilityFlashDelay);
 
             hitboxDMG.SetActive(true);
@@ -82,6 +100,12 @@ public class playerHealth : MonoBehaviour
             onWater = true;
             StartCoroutine(WaterDamage());
         }
+
+        if (collision.tag == "enemy")
+        {
+            onspider = true;
+            StartCoroutine(WaterDamage());
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -89,16 +113,32 @@ public class playerHealth : MonoBehaviour
         if (collision.tag == "water")
         {
             onWater = false;
-        }
-    }
 
-    private void OnTriggerStay2D(Collider2D collision){
+        }
 
         if (collision.tag == "enemy")
         {
-            currentHealth -= 10;
+            onWater = false;
         }
     }
+
+   /* private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (collision.tag == "enemy")
+        {
+            onspider = true;
+        }
+    }*/
+
+   /* private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.tag == "enemy")
+        {
+            onWater = false;
+        }
+    }*/
 
     public IEnumerator WaterDamage()
     {
@@ -111,19 +151,30 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter (Collider col)
+    public IEnumerator Spooderdmg()
     {
-        if(col.transform.tag == "enemy")
-        {
-            this.transform.position = SpawnPoint.transform.position;
-        }
 
-        if (col.transform.tag == "HP")
+        currentHealth -= 15;
+        yield return new WaitForSeconds(1f);
+        if (onspider)
         {
-            currentHealth += 20;
+            StartCoroutine(Spooderdmg());
         }
-
     }
 
-    
+    /*    void OnTriggerEnter(Collider col)
+        {
+            if (col.transform.tag == "enemy")
+            {
+                this.transform.position = SpawnPoint.transform.position;
+            }
+
+            if (col.transform.tag == "HP")
+            {
+                currentHealth += 20;
+            }
+
+        }*/
+
+
 }
