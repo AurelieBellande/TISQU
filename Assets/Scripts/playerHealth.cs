@@ -32,11 +32,11 @@ public class playerHealth : MonoBehaviour
     {
 
         // test pour voir si ca fonctionne
-       /* if (Input.GetKeyDown(KeyCode.))
+       /* if (Input.GetKeyDown(KeyCode.R))
         {
             TakeDamage(20);
-        }*/
-
+        }
+*/
 
     }
 
