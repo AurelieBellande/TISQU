@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] public Transform teleport;
 
+   
     //jetpack
-
+    /*float distance = 10f;*/
     public float jetpackForce = 30.0f;
     bool jetpackActive;
     bool firstinput = true;
@@ -89,7 +91,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
 
-
         if (is_jumping && can_jump)
         {
             is_jumping = false;
@@ -167,6 +168,17 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+
+        if (collision.tag == "bossdoor")
+        {
+          transform.position = teleport.position;
+        }
+
+    }
+
    
-        
+
 }
