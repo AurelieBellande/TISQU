@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BOSS : MonoBehaviour
 {
+
     float speed = 8f;
     Vector3 targetPos;
-    public HealthManager healthBar3;
+    
     
 
     int pointIndex;

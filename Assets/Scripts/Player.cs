@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public Transform teleport;
+    [SerializeField] public Transform checkpoint;
 
-   
+
+
     //jetpack
     /*float distance = 10f;*/
     public float jetpackForce = 30.0f;
@@ -177,6 +179,10 @@ public class Player : MonoBehaviour
           transform.position = teleport.position;
         }
 
+        /*if (collision.tag == "checkpoint" && currentHealth <= 0)
+        {
+            transform.position = checkpoint.position;
+        }*/
     }
 
    

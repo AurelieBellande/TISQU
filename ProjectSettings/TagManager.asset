@@ -12,6 +12,7 @@ TagManager:
   - spechal grnd
   - HP
   - bossdoor
+  - checkpoint
   layers:
   - Default
   - TransparentFX
