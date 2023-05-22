@@ -10,6 +10,12 @@ public class enmy : MonoBehaviour
     [SerializeField] Transform[] wayPoints;
     public HealthManager healthBar2;
 
+    float horizontal_value;
+
+    Rigidbody2D rb;
+    SpriteRenderer sr;
+    Animator animController;
+
     int pointIndex;
     int pointCount;
     int direction = 1;
@@ -36,7 +42,9 @@ public class enmy : MonoBehaviour
 
         minimumDistance = 20f;
 
-
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        animController = GetComponent<Animator>();
 
     }
 
@@ -44,6 +52,10 @@ public class enmy : MonoBehaviour
     void Update()
     {
 
+        horizontal_value = Input.GetAxis("Horizontal"); 
+
+        if (horizontal_value > 0) sr.flipX = false;
+        else if (horizontal_value < 0) sr.flipX = true;
     }
 
     private void FixedUpdate()

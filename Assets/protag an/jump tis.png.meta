@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a49d6de9387db59479e5cd7e1ce71114
+guid: e4010d550f6684c468b4d0013013952a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tisq walk sheet_0
+      name: jump tis_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 779.2
-        height: 779
+        y: 2337.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 497c4aeca677a8841b3aef1f87ddc0f3
-      internalID: -657258365
+      spriteID: a541740ad4c7c3e4b9a4e212610004b7
+      internalID: -1356095042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_1
+      name: jump tis_1
       rect:
         serializedVersion: 2
         x: 779
-        y: 0
-        width: 779.2
-        height: 779
+        y: 2337.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c679fdacb1db9647be10d252efea285
-      internalID: -252352267
+      spriteID: 1468a32c6893f724daa6bb2b24db11e5
+      internalID: -514453960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_2
+      name: jump tis_2
       rect:
         serializedVersion: 2
         x: 1558
-        y: 0
-        width: 779.2
-        height: 779
+        y: 2337.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f96cd9be4ea4d44e835634fe60c3723
-      internalID: 1656385702
+      spriteID: a4823b64d31192d4286db55883355716
+      internalID: 375480965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_3
+      name: jump tis_3
       rect:
         serializedVersion: 2
         x: 2337
-        y: 0
-        width: 779.2
-        height: 779
+        y: 2337.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69471c816bb8b9b45bd7d7c438ccc3b6
-      internalID: 267203994
+      spriteID: 09d9fd96458fa734183b2eb6846aa432
+      internalID: 234196985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_4
+      name: jump tis_4
       rect:
         serializedVersion: 2
-        x: 3116
-        y: 0
-        width: 779.2
-        height: 779
+        x: 0
+        y: 1558.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e5962dc488a1b549921cda574a3ef22
-      internalID: -1542866207
+      spriteID: daf67b53219208945a211de74bb97706
+      internalID: -1868607802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_5
+      name: jump tis_5
       rect:
         serializedVersion: 2
-        x: 3895
-        y: 0
-        width: 779.2
-        height: 779
+        x: 779
+        y: 1558.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f9d8d3a8a1f7204cbca5f8131e22129
-      internalID: -1107601625
+      spriteID: e59838df24a3c544b9fd8ef87473b9e5
+      internalID: -1937304412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_6
+      name: jump tis_6
       rect:
         serializedVersion: 2
-        x: 4674
-        y: 0
-        width: 779.2
-        height: 779
+        x: 1558
+        y: 1558.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95bbbc5ab2bb57545893b335af6499fe
-      internalID: -2017310259
+      spriteID: 38b9ce284e71ac24a89657a88355eb23
+      internalID: -959704911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_7
+      name: jump tis_7
       rect:
         serializedVersion: 2
-        x: 5453
-        y: 0
-        width: 779.2
-        height: 779
+        x: 2337
+        y: 1558.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff934f62798953348940c62c61c9d3d8
-      internalID: 679987082
+      spriteID: fd465d2bb1c485446b061ae0dcba90ee
+      internalID: -110086197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_8
+      name: jump tis_8
       rect:
         serializedVersion: 2
-        x: 6232
-        y: 0
-        width: 779.2
-        height: 779
+        x: 0
+        y: 779.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1a7193b2400b7b48a8a8029beedf00d
-      internalID: -1317574410
+      spriteID: 64be466e51e5d7346a032964057c556d
+      internalID: 773900405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tisq walk sheet_9
+      name: jump tis_9
       rect:
         serializedVersion: 2
-        x: 7011
-        y: 0
-        width: 779.2
-        height: 779
+        x: 779
+        y: 779.75
+        width: 779.25
+        height: 779.25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,8 +308,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c80ce1df072904b8ff04d444094f3c
-      internalID: 504165986
+      spriteID: 4dd07b16b0d743741a21588cb86e8ad2
+      internalID: -1966925647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump tis_10
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 779.75
+        width: 779.25
+        height: 779.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f361f0c09ac5bb45bdcb638186a60a7
+      internalID: 715480732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump tis_11
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 779.75
+        width: 779.25
+        height: 779.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fb218b227da5e4caf1e3f3e3e16ef8
+      internalID: 306591534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump tis_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 779.25
+        height: 779.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cea9c58c692ff4e9835118ed77733e
+      internalID: -51059697
       vertices: []
       indices: 
       edges: []
@@ -325,16 +388,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tisq walk sheet_0: -657258365
-      tisq walk sheet_1: -252352267
-      tisq walk sheet_2: 1656385702
-      tisq walk sheet_3: 267203994
-      tisq walk sheet_4: -1542866207
-      tisq walk sheet_5: -1107601625
-      tisq walk sheet_6: -2017310259
-      tisq walk sheet_7: 679987082
-      tisq walk sheet_8: -1317574410
-      tisq walk sheet_9: 504165986
+      jump tis_0: -1356095042
+      jump tis_1: -514453960
+      jump tis_10: 715480732
+      jump tis_11: 306591534
+      jump tis_12: -51059697
+      jump tis_2: 375480965
+      jump tis_3: 234196985
+      jump tis_4: -1868607802
+      jump tis_5: -1937304412
+      jump tis_6: -959704911
+      jump tis_7: -110086197
+      jump tis_8: 773900405
+      jump tis_9: -1966925647
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

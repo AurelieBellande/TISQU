@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        //animController = GetComponent<Animator>();
+        animController = GetComponent<Animator>();
         //Debug.Log(Mathf.Lerp(current, target, 0));
       
     }
@@ -56,10 +56,10 @@ public class Player : MonoBehaviour
 
         horizontal_value = Input.GetAxis("Horizontal");
 
-       /* if (horizontal_value > 0) sr.flipX = false;
-        else if (horizontal_value < 0) sr.flipX = true;*/
+        if (horizontal_value > 0) sr.flipX = false;
+        else if (horizontal_value < 0) sr.flipX = true;
 
-        /* animController.SetFloat("Speed", Mathf.Abs(horizontal_value));*/
+        animController.SetFloat("Speed", Mathf.Abs(horizontal_value));
 
         if (Input.GetButtonDown("Jump") && can_jump)
         {
@@ -152,21 +152,16 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Ground")
         {
-            //animController.SetBool("Jumping", false);
+            animController.SetBool("Jumping", false);
            /* IsGrounded = true;*/
             CountJump = 2; //reset double saut quand on touche le sol
             
         }
-       
-        //animController.SetBool("Jumping", false);
-
-        /*can_jump = true;*/
-        /*animController.SetBool("Jumping", false);
-        IsGrounded = true;
-        CountJump = 2; //reset double saut quand on touche le sol
-
-         animController.SetBool("Jumping", true);
-         IsGrounded = false;*/
+       else if (collision.tag != "Ground")
+        {
+            animController.SetBool("Jumping", true);
+        }
+        
 
     }
 
