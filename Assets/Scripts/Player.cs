@@ -61,12 +61,12 @@ public class Player : MonoBehaviour
 
         animController.SetFloat("Speed", Mathf.Abs(horizontal_value));
 
-        if (Input.GetButtonDown("Jump") && can_jump)
+       /* if (Input.GetButtonDown("Jump") && can_jump)
         {
 
-            is_jumping = true;
+           *//* is_jumping = true;*//*
             animController.SetBool("Jumping", true);
-        }
+        }*/
 
         //jetpeck
 
