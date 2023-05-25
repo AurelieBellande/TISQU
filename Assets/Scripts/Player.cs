@@ -5,25 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public Transform teleport;
-    [SerializeField] public Transform checkpoint;
+   
 
-
-
-    //jetpack
-    /*float distance = 10f;*/
     public float jetpackForce = 30.0f;
     bool jetpackActive;
     bool firstinput = true;
     public float hovertime = 3;
     bool canjetpack;
-
-    /*bool IsGrounded = false;*/
+    
     int CountJump = 2;
-    /*private int LastPressedJumpTime = 0;*/
-    /*private int LastOnGroundTime = 0;*/
-
-    /*dubl jump*/
-
+   
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator animController;
@@ -36,8 +27,9 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed_horizontal = 400.0f;
     [SerializeField] bool is_jumping = false;
     [SerializeField] bool can_jump = false;
-  /* [Range(0, 1)] [SerializeField] float smooth_time = 0.5f;*/
+    /* [Range(0, 1)] [SerializeField] float smooth_time = 0.5f;*/
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +38,13 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animController = GetComponent<Animator>();
         //Debug.Log(Mathf.Lerp(current, target, 0));
+       
       
     }
 
     // Update is called once per frame
     void Update()
     {
-      
 
         horizontal_value = Input.GetAxis("Horizontal");
 
@@ -73,6 +65,7 @@ public class Player : MonoBehaviour
         jetpackActive = Input.GetButton("Fire1");
         if (jetpackActive)
         {
+            Debug.Log("FireJetPAck");
             hovertime -= Time.deltaTime;
             hovertime = Mathf.Clamp(hovertime, 0, 5);
         }
@@ -174,12 +167,10 @@ public class Player : MonoBehaviour
           transform.position = teleport.position;
         }
 
-        /*if (collision.tag == "checkpoint" && currentHealth <= 0)
-        {
-            transform.position = checkpoint.position;
-        }*/
+       
+
     }
 
-   
+    
 
 }

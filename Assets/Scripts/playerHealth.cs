@@ -5,6 +5,9 @@ public class playerHealth : MonoBehaviour
 {
     /*float V = 0,5;*/
 
+    [SerializeField] public Transform checkpoint1;
+    [SerializeField] public Transform checkpoint2;
+
     /*[SerializeField] public float healthAmount = 100f;*/
     [SerializeField] public int maxHealth = 100;
     public int currentHealth;
@@ -25,6 +28,7 @@ public class playerHealth : MonoBehaviour
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        
 
       
     }
@@ -42,7 +46,13 @@ public class playerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
+           
         }
+        /* if (currentHealth <= 0)
+         {
+             transform.position = SpawnPoint.position;
+
+         }*/
     }
 
     public void TakeDamage(int damage)
@@ -83,14 +93,14 @@ public class playerHealth : MonoBehaviour
 
             hitboxDMG.SetActive(true);
         }
-        Debug.Log("Coroutine1");
+        /*Debug.Log("Coroutine1");*/
     }
 
     public IEnumerator HandleInvincibilityDelay()
     {
         yield return new WaitForSeconds(1.5f);
         isInvincible = false;
-        Debug.Log("Coroutine2");
+        /*Debug.Log("Coroutine2");*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -107,6 +117,25 @@ public class playerHealth : MonoBehaviour
             onspider = true;
             StartCoroutine(WaterDamage());
         }
+
+        if (collision.tag == "checkpoint2")
+        {
+            if (currentHealth <= 0)
+            {
+                transform.position = checkpoint2.position;
+            }
+            
+        }
+        else if (collision.tag == "checkpoint1" )
+        {
+            if (currentHealth <= 0)
+            {
+                transform.position = checkpoint1.position;
+            }
+                
+        }
+        
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -123,23 +152,6 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-   /* private void OnTriggerStay2D(Collider2D collision)
-    {
-
-        if (collision.tag == "enemy")
-        {
-            onspider = true;
-        }
-    }*/
-
-   /* private void OnTriggerExit2D(Collider2D collision)
-    {
-
-        if (collision.tag == "enemy")
-        {
-            onWater = false;
-        }
-    }*/
 
     public IEnumerator WaterDamage()
     {
@@ -163,19 +175,12 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-    /*    void OnTriggerEnter(Collider col)
-        {
-            if (col.transform.tag == "enemy")
-            {
-                this.transform.position = SpawnPoint.transform.position;
-            }
+   
 
-            if (col.transform.tag == "HP")
+           /* if (col.transform.tag == "HP")
             {
                 currentHealth += 20;
             }
-
-        }*/
-
+       */
 
 }
