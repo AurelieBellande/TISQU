@@ -10,7 +10,7 @@ public class GroundFinisherState : MeleeBaseState
 
         //Attack
         attackIndex = 2;
-        duration = 0.5f;
+        duration = 1.5f;
         animator.SetTrigger("Attack" + attackIndex);
         Debug.Log("Player Attack " + attackIndex + "Fired");
     }

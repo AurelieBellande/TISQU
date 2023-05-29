@@ -5,13 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public Transform teleport;
-   
 
+    public float FallMultiplier = 2.5f;
     public float jetpackForce = 30.0f;
     bool jetpackActive;
     bool firstinput = true;
     public float hovertime = 3;
     bool canjetpack;
+    bool fall = false;
     
     int CountJump = 2;
    
@@ -53,6 +54,8 @@ public class Player : MonoBehaviour
 
         animController.SetFloat("Speed", Mathf.Abs(horizontal_value));
 
+
+
        /* if (Input.GetButtonDown("Jump") && can_jump)
         {
 
@@ -78,8 +81,18 @@ public class Player : MonoBehaviour
         {
          
             Jump();
-           
+            animController.SetBool("Jumping", true);
+
         }
+
+         if (rb.velocity.y < 0)
+        {
+            fall = true;
+            animController.SetBool("falling", true);
+        }
+
+        
+        
 
       
     }
@@ -118,6 +131,10 @@ public class Player : MonoBehaviour
             rb.gravityScale = 1;
         }
 
+        if (fall == true)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime;
+        }
 
     }
 
@@ -166,8 +183,6 @@ public class Player : MonoBehaviour
         {
           transform.position = teleport.position;
         }
-
-       
 
     }
 

@@ -28,6 +28,7 @@ public class playerHealth : MonoBehaviour
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
         
 
       
@@ -53,6 +54,8 @@ public class playerHealth : MonoBehaviour
              transform.position = SpawnPoint.position;
 
          }*/
+
+
     }
 
     public void TakeDamage(int damage)
@@ -115,7 +118,7 @@ public class playerHealth : MonoBehaviour
         if (collision.tag == "enemy")
         {
             onspider = true;
-            StartCoroutine(WaterDamage());
+            StartCoroutine(Spooderdmg());
         }
 
         if (collision.tag == "checkpoint2")
@@ -134,21 +137,26 @@ public class playerHealth : MonoBehaviour
             }
                 
         }
-        
+
+       /* if (collision.tag == "HP")
+        {
+            currentHealth += 10;
+        }*/
+
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.tag == "water")
+        if (collision.tag != "water")
         {
             onWater = false;
 
         }
 
-        if (collision.tag == "enemy")
+        if (collision.tag != "enemy")
         {
-            onWater = false;
+            onspider = false;
         }
     }
 
@@ -172,6 +180,10 @@ public class playerHealth : MonoBehaviour
         if (onspider)
         {
             StartCoroutine(Spooderdmg());
+        }
+        else if (!onspider)
+        {
+            StopCoroutine(Spooderdmg());
         }
     }
 

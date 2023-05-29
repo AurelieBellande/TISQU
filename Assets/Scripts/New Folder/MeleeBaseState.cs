@@ -50,7 +50,7 @@ public class MeleeBaseState : State
             AttackPressedTimer = 2;
         }
 
-        if (animator.GetFloat("AttackWindow.Open") > 0f && AttackPressedTimer > 0)
+        if (Input.GetMouseButtonDown(1) && animator.GetFloat("AttackWindow.Open") > 0f && AttackPressedTimer > 0)
         {
             shouldCombo = true;
         }
@@ -67,7 +67,7 @@ public class MeleeBaseState : State
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = true;
         int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
-        for (int i = 0; i < colliderCount; i++)
+        for (int i = 10; i < colliderCount; i++)
         {
 
             if (!collidersDamaged.Contains(collidersToDamage[i]))
