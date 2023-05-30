@@ -63,11 +63,11 @@ public class MeleeBaseState : State
 
     protected void Attack()
     {
-        Collider2D[] collidersToDamage = new Collider2D[10];
+        Collider2D[] collidersToDamage = new Collider2D[15];
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = true;
         int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
-        for (int i = 10; i < colliderCount; i++)
+        for (int i = 15; i < colliderCount; i++)
         {
 
             if (!collidersDamaged.Contains(collidersToDamage[i]))

@@ -4,41 +4,47 @@ using UnityEngine;
 
 public class BOSS : MonoBehaviour
 {
+    public Transform player;
+    public bool isFlipped = false;
 
     float speed = 8f;
-    Vector3 targetPos;
-    
-    
-
+    Vector3 targetPos;   
     int pointIndex;
     int pointCount;
     int direction = 1;
     float step;
-
     [SerializeField] Transform Playertarget;
     float minimumDistance;
 
-
-   
     // Start is called before the first frame update
     void Start()
     {
-       /* pointCount = wayPoints.Length;
-        pointIndex = 1;
-        targetPos = wayPoints[pointIndex].transform.position;*/
-
         minimumDistance = 20f;
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
+    public void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if( transform.position.x > player.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
+    }
     private void FixedUpdate()
     {
 
@@ -49,35 +55,6 @@ public class BOSS : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, Playertarget.position, step);
         }
 
-       /* else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
-            if (transform.position == targetPos)
-            {
-                NextPoint();
-            }
-        }*/
-
-
-
     }
 
-   /* void NextPoint()
-    {
-
-
-        if (pointIndex == pointCount - 1)
-        {
-            direction = -1;
-        }
-
-        if (pointIndex == 0)
-        {
-
-            direction = 1;
-        }
-
-        pointIndex += direction;
-        targetPos = wayPoints[pointIndex].transform.position;
-    }*/
 }
