@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class enmy : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class enmy : MonoBehaviour
 
     [SerializeField] Transform Playertarget;
     float minimumDistance;
-
+    
 
     private void Awake()
     {
@@ -60,7 +61,6 @@ public class enmy : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         step = speed * Time.fixedDeltaTime;
 
         if (Vector2.Distance(transform.position, Playertarget.position) < minimumDistance)
@@ -77,19 +77,10 @@ public class enmy : MonoBehaviour
             }
         }
 
-
-
-
-
-
-
-
     }
 
     void NextPoint()
     {
-
-
         if (pointIndex == pointCount - 1)
         {
             direction = -1;

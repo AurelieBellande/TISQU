@@ -50,7 +50,7 @@ public class MeleeBaseState : State
             AttackPressedTimer = 2;
         }
 
-        if (Input.GetMouseButtonDown(1) && animator.GetFloat("AttackWindow.Open") > 0f && AttackPressedTimer > 0)
+        if (Input.GetMouseButtonDown(1) && animator.GetFloat("AttackWindow.Open") > 0f && AttackPressedTimer >= 0)
         {
             shouldCombo = true;
         }
@@ -63,21 +63,22 @@ public class MeleeBaseState : State
 
     protected void Attack()
     {
-        Collider2D[] collidersToDamage = new Collider2D[15];
+        Collider2D[] collidersToDamage = new Collider2D[10];
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = true;
         int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
-        for (int i = 15; i < colliderCount; i++)
+        for (int i = 0; i < colliderCount; i++)
         {
 
             if (!collidersDamaged.Contains(collidersToDamage[i]))
             {
                 TeamComponent hitTeamComponent = collidersToDamage[i].GetComponentInChildren<TeamComponent>();
-
                 // Only check colliders with a valid Team Componnent attached
                 if (hitTeamComponent && hitTeamComponent.teamIndex == TeamIndex.Enemy)
                 {
                     GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform);
+                    hitTeamComponent.gameObject.GetComponent<enmy>().healthBar2.TakeDamage(15);
+                    hitTeamComponent.gameObject.GetComponent<BOSShealth>().healthBar3.TakeDamage(15);
                     Debug.Log("Enemy Has Taken:" + attackIndex + "Damage");
                     collidersDamaged.Add(collidersToDamage[i]);
                 }

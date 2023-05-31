@@ -29,9 +29,6 @@ public class BOSShealth : MonoBehaviour
     void Update()
     {
 
-        
-
-      
     }
 
     public void TakeDamagee(int damage)
@@ -45,8 +42,8 @@ public class BOSShealth : MonoBehaviour
             StartCoroutine(HandleInvincibilityDelay2());
         }
 
-        /*currentHealth -= damage;
-        healthBar.fillAmount = currentHealth / 100;*/
+        currentHealth -= damage;
+        /*healthBar3.fillAmount = currentHealth / 100.0f;*/
 
     }
 

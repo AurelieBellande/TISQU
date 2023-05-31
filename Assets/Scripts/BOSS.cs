@@ -9,9 +9,9 @@ public class BOSS : MonoBehaviour
 
     float speed = 8f;
     Vector3 targetPos;   
-    int pointIndex;
-    int pointCount;
-    int direction = 1;
+    /*int pointIndex;
+    int pointCount;*/
+    /*int direction = 1;*/
     float step;
     [SerializeField] Transform Playertarget;
     float minimumDistance;
