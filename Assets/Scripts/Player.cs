@@ -122,7 +122,6 @@ bool jumpd = false;*/
         {
             animController.SetTrigger("Jump");
             grounded = false;
-            animController.SetBool("Grounded", grounded);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             /*m_groundSensor.Disable(0.2f);*/
             Debug.Log("jumpr");

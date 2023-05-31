@@ -31,9 +31,8 @@ public class HealthManager : MonoBehaviour
     {
         Debug.Log("Test");
         healthAmount -= damageAmount;
-        /*healthBar.fillAmount = healthAmount / 100;*/
-
         healthBar.fillAmount = healthAmount/100.0f;
+
         //if (healthAmount <= 0)
         //{
         //    Destroy(gameObject);

@@ -121,7 +121,7 @@ public class playerHealth : MonoBehaviour
             StartCoroutine(Spooderdmg());
         }
 
-        if (collision.tag == "checkpoint2")
+      /*  if (collision.tag == "checkpoint2")
         {
             if (currentHealth <= 0)
             {
@@ -136,7 +136,7 @@ public class playerHealth : MonoBehaviour
                 transform.position = checkpoint1.position;
             }
                 
-        }
+        }*/
 
        /* if (collision.tag == "HP")
         {

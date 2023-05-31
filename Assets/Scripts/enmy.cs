@@ -11,7 +11,7 @@ public class enmy : MonoBehaviour
     [SerializeField] Transform[] wayPoints;
     public HealthManager healthBar2;
 
-    float healthAmount = 100;
+    
     float horizontal_value;
 
     Rigidbody2D rb;
@@ -44,11 +44,12 @@ public class enmy : MonoBehaviour
 
         minimumDistance = 20f;
 
-        healthAmount = GetComponent<HealthManager>().healthAmount;
+        healthBar2 = GetComponent<HealthManager>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animController = GetComponent<Animator>();
 
+        
     }
 
     // Update is called once per frame
@@ -60,7 +61,10 @@ public class enmy : MonoBehaviour
         if (horizontal_value > 0) sr.flipX = false;
         else if (horizontal_value < 0) sr.flipX = true;
 
-        
+        /*if (healthAmount <= 0)
+        {
+            Destroy(gameObject);
+        }*/
     }
 
     private void FixedUpdate()
@@ -99,6 +103,5 @@ public class enmy : MonoBehaviour
         pointIndex += direction;
         targetPos = wayPoints[pointIndex].transform.position;
     }
-
 
 }
