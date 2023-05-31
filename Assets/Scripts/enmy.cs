@@ -44,7 +44,7 @@ public class enmy : MonoBehaviour
 
         minimumDistance = 20f;
 
-        healthAmount = GetComponent<HealthManager>().healthAmount;
+        /*healthAmount = GetComponent<HealthManager>().healthAmount;*/
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animController = GetComponent<Animator>();

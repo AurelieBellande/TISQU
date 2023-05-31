@@ -78,7 +78,7 @@ public class MeleeBaseState : State
                 {
                     GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform);
                     hitTeamComponent.gameObject.GetComponent<enmy>().healthBar2.TakeDamage(15);
-                    hitTeamComponent.gameObject.GetComponent<BOSShealth>().healthBar3.TakeDamage(15);
+                    /*hitTeamComponent.gameObject.GetComponent<BOSShealth>().healthBar3.TakeDamage(15);*/
                     Debug.Log("Enemy Has Taken:" + attackIndex + "Damage");
                     collidersDamaged.Add(collidersToDamage[i]);
                 }
