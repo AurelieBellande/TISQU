@@ -8,6 +8,7 @@ public enum TeamIndex : sbyte
     None = -1,
     Neutral = 0,
     Player,
+    Boss,
     Enemy,
     Count
 }

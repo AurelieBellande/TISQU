@@ -15,16 +15,26 @@ public class BOSS : MonoBehaviour
     float step;
     [SerializeField] Transform Playertarget;
     float minimumDistance;
+    public HealthManager healthBar3;
+    float healthAmount = 100;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         minimumDistance = 20f;
+        healthBar3 = GetComponent<HealthManager>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (healthAmount <= 0)
+        {
+            Destroy(gameObject);
+            anim.SetTrigger("Death");
+        }
     }
 
     public void LookAtPlayer()

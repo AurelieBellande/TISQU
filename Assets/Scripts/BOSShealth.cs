@@ -9,7 +9,7 @@ public class BOSShealth : MonoBehaviour
     public bool isInvincible = false;
     public SpriteRenderer graphics;
     public float invincibilityFlashDelay = 0.2f;
-
+   
 
     public HealthManager healthBar3;
 
@@ -21,14 +21,14 @@ public class BOSShealth : MonoBehaviour
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;
         healthBar3.SetMaxHealth(maxHealth);
-
+        healthBar3 = GetComponent<HealthManager>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void TakeDamagee(int damage)
@@ -42,8 +42,8 @@ public class BOSShealth : MonoBehaviour
             StartCoroutine(HandleInvincibilityDelay2());
         }
 
-        currentHealth -= damage;
-        /*healthBar3.fillAmount = currentHealth / 100.0f;*/
+       /* currentHealth -= damage;
+        *//*healthBar3.fillAmount = currentHealth / 100.0f;*/
 
     }
 

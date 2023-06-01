@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class playerHealth : MonoBehaviour
     [SerializeField] public Transform checkpoint1;
     [SerializeField] public Transform checkpoint2;
 
-    /*[SerializeField] public float healthAmount = 100f;*/
     [SerializeField] public int maxHealth = 100;
     public int currentHealth;
     public bool isInvincible = false;
@@ -28,10 +28,6 @@ public class playerHealth : MonoBehaviour
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-
-        
-
-      
     }
 
     // Update is called once per frame
@@ -39,10 +35,10 @@ public class playerHealth : MonoBehaviour
     {
 
         // test pour voir si ca fonctionne
-        if (Input.GetKeyDown(KeyCode.R))
+        /*if (Input.GetKeyDown(KeyCode.R))
         {
             TakeDamage(20);
-        }
+        }*/
 
         if (currentHealth <= 0)
         {
@@ -70,17 +66,18 @@ public class playerHealth : MonoBehaviour
         }
 
         /*currentHealth -= damage;
-        healthBar.fillAmount = currentHealth / 100;*/
+        healthBar.fillAmount = currentHealth / 100.0f;*/
 
+           /* healthBar.fillAmount = currentHealth / 100.0f;*/
     }
 
-    /*public void Heal(int healingAmount)
+   /* public void Heal(int healingAmount)
     {
-        currentHealth  += healingAmount;
-        currentHealth  = Mathf.Clamp(currentHealth , 0, 100);
+        currentHealth += healingAmount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, 100);
 
-        healthBar.fillAmount = currentHealth  / 100f;
-
+        *//*healthBar.fillAmount = currentHealth / 100f;*//*
+        healthBar.SetHealth(currentHealth);
 
     }*/
 
@@ -121,7 +118,7 @@ public class playerHealth : MonoBehaviour
             StartCoroutine(Spooderdmg());
         }
 
-        if (collision.tag == "checkpoint2")
+       /* if (collision.tag == "checkpoint2")
         {
             if (currentHealth <= 0)
             {
@@ -136,12 +133,17 @@ public class playerHealth : MonoBehaviour
                 transform.position = checkpoint1.position;
             }
                 
+        }*/
+
+        if (collision.tag == "HP")
+        {
+            currentHealth += 20;
         }
 
-       /* if (collision.tag == "HP")
+        if (collision.tag == "HP2")
         {
-            currentHealth += 10;
-        }*/
+            currentHealth += 100;
+        }
 
 
     }
@@ -158,6 +160,8 @@ public class playerHealth : MonoBehaviour
         {
             onspider = false;
         }
+
+
     }
 
 
@@ -188,11 +192,4 @@ public class playerHealth : MonoBehaviour
     }
 
    
-
-           /* if (col.transform.tag == "HP")
-            {
-                currentHealth += 20;
-            }
-       */
-
 }

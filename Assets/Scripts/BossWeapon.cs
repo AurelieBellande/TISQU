@@ -10,6 +10,8 @@ public class BossWeapon : MonoBehaviour
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
+	/*private float AttackPressedTimer = 0;*/
+	Animator animator;
 
 	public void Attack()
 	{
@@ -32,4 +34,6 @@ public class BossWeapon : MonoBehaviour
 
 		Gizmos.DrawWireSphere(pos, attackRange);
 	}
+
+	
 }

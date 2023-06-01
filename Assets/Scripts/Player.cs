@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public float hovertime = 3;
     bool canjetpack;
 
-   
     /*bool fall = false;
 bool jumpd = false;*/
     bool grounded = false;
@@ -34,6 +33,9 @@ bool jumpd = false;*/
     [SerializeField] bool is_jumping = false;
     [SerializeField] bool can_jump = false;
 
+    public static Vector2 lastCheckPointpos = new Vector2(-185, -150);
+    public static bool isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,12 @@ bool jumpd = false;*/
         animController = GetComponent<Animator>();
         //Debug.Log(Mathf.Lerp(current, target, 0));
         /*grounded = true;*/    
+    }
+
+    private void Awake()
+    {
+        isGameOver = false;
+        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointpos;
     }
 
     // Update is called once per frame
@@ -83,15 +91,7 @@ bool jumpd = false;*/
         if (Input.GetKeyDown(KeyCode.Space) && CountJump > 0 && jetpackActive == false)
         {
             Jump();
-            /*animController.SetBool("Jumping", true);*/
-            /*jumpd = true;*/
-
-            /*if (rb.velocity.y < 0)
-            {
-                fall = true;
-                animController.SetBool("falling", true);
-                Debug.Log("felled");
-            }*/
+            
         }
 
         m_timeSinceAttack += Time.deltaTime;
@@ -122,7 +122,7 @@ bool jumpd = false;*/
         {
             animController.SetTrigger("Jump");
             grounded = false;
-            animController.SetBool("Grounded", grounded);
+            /*animController.SetBool("Grounded", grounded);*/
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             /*m_groundSensor.Disable(0.2f);*/
             Debug.Log("jumpr");

@@ -69,18 +69,31 @@ public class MeleeBaseState : State
         int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
         for (int i = 0; i < colliderCount; i++)
         {
-
             if (!collidersDamaged.Contains(collidersToDamage[i]))
             {
                 TeamComponent hitTeamComponent = collidersToDamage[i].GetComponentInChildren<TeamComponent>();
-                // Only check colliders with a valid Team Componnent attached
-                if (hitTeamComponent && hitTeamComponent.teamIndex == TeamIndex.Enemy)
+                if (hitTeamComponent != null)
                 {
-                    GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform);
-                    hitTeamComponent.gameObject.GetComponent<enmy>().healthBar2.TakeDamage(15);
-                    /*hitTeamComponent.gameObject.GetComponent<BOSShealth>().healthBar3.TakeDamage(15);*/
-                    Debug.Log("Enemy Has Taken:" + attackIndex + "Damage");
-                    collidersDamaged.Add(collidersToDamage[i]);
+                    HealthManager healthManager = hitTeamComponent.gameObject.GetComponentInChildren<HealthManager>();
+
+                    if (hitTeamComponent.teamIndex == TeamIndex.Enemy && healthManager != null)
+                    {
+                        GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform);
+                        healthManager.TakeDamage(15);
+                        Debug.Log("Enemy Has Taken:" + attackIndex + "Damage");
+                        collidersDamaged.Add(collidersToDamage[i]);
+                    }
+                    else if (hitTeamComponent.teamIndex == TeamIndex.Boss && healthManager != null)
+                    {
+                        HealthManager bossHealthManager = hitTeamComponent.gameObject.GetComponentInChildren<HealthManager>();
+                        if (bossHealthManager != null)
+                        {
+                            GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform);
+                            bossHealthManager.TakeDamage(10);
+                            Debug.Log("Boss Has Taken:" + attackIndex + "Damage");
+                            collidersDamaged.Add(collidersToDamage[i]);
+                        }
+                    }
                 }
             }
         }
