@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class sceneEnd : MonoBehaviour
 {
-    public HealthManager healthman;
+   /* public HealthManager healthman;
     public int gameStartScene;
     int healthAmount;
 
@@ -18,12 +18,12 @@ public class sceneEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* vv*/
+        *//* vv*//*
     }
 
     public void SartGame()
     {
         if (healthAmount == 0)
         SceneManager.LoadScene(gameStartScene);
-    }
+    }*/
 }

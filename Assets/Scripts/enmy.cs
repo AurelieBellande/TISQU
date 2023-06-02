@@ -63,6 +63,7 @@ public class enmy : MonoBehaviour
         if (healthAmount <= 0)
         {
             Destroy(gameObject);
+            Debug.Log("ggg");
         }
 
     }

@@ -4,7 +4,7 @@ using System.Collections;
 public class BOSShealth : MonoBehaviour
 {
     
-    [SerializeField] public int maxHealth = 1000;
+    [SerializeField] public int maxHealth = 100;
     public int currentHealth;
     public bool isInvincible = false;
     public SpriteRenderer graphics;

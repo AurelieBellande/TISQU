@@ -25,10 +25,10 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthAmount <= 0)
+        /*if (healthAmount <= 0)
         {
-            DefeatBoss();
-        }
+            *//*DefeatBoss();*//*
+        }*/
 
         /*if (healthAmount <= 0)
         {
@@ -69,10 +69,10 @@ public class HealthManager : MonoBehaviour
         }*/
        
     }
-    public void DefeatBoss()
+   /* public void DefeatBoss()
     {
         transform.root.gameObject.SetActive(false);
-    }
+    }*/
 
 
     public void SetMaxHealth(int health)

@@ -61,8 +61,8 @@ public class BOSS : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (isBossDefeated)
-            return;
+        /*if (isBossDefeated)
+            return;*/
 
         step = speed * Time.fixedDeltaTime;
 
@@ -75,7 +75,7 @@ public class BOSS : MonoBehaviour
        
     }
 
-    public void BossDefeated()
+    /*public void BossDefeated()
     {
         if (!isBossDefeated)
         {
@@ -87,5 +87,5 @@ public class BOSS : MonoBehaviour
     private void LoadCreditsScene()
     {
         SceneManager.LoadScene(creditsSceneName);
-    }
+    }*/
 }
