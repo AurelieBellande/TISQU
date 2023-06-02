@@ -62,11 +62,6 @@ public class HealthManager : MonoBehaviour
 
         healthBar.fillAmount = healthAmount/100.0f;
 
-        /*if (healthAmount == 500)
-        {
-            healthBar.fillAmount = healthAmount / 500.0f;
-            Debug.Log("GYAT");
-        }*/
        
     }
    /* public void DefeatBoss()

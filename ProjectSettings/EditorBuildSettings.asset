@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: 
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/menu.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tisquy_adv02.unity
     guid: ff2f5ed7fe58bf446812950be60ade23
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: 6eae0e986e4c3d4458f504588d413b09
   m_configObjects: {}
