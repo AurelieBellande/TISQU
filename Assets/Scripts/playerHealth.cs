@@ -4,15 +4,13 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
-    /*float V = 0,5;*/
-
+    
     [SerializeField] public Transform checkpoint1;
     [SerializeField] public Transform checkpoint2;
 
     [SerializeField] public int maxHealth = 100;
     public int currentHealth;
     public bool isInvincible = false;
-    /*public SpriteRenderer graphics;*/
     public float invincibilityFlashDelay = 0.2f;
 
     public bool onspider = false;
@@ -34,23 +32,12 @@ public class playerHealth : MonoBehaviour
     void Update()
     {
 
-        // test pour voir si ca fonctionne
-        /*if (Input.GetKeyDown(KeyCode.R))
-        {
-            TakeDamage(20);
-        }*/
-
         if (currentHealth <= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
            
         }
-        /* if (currentHealth <= 0)
-         {
-             transform.position = SpawnPoint.position;
-
-         }*/
-
+      
 
     }
 
@@ -71,15 +58,14 @@ public class playerHealth : MonoBehaviour
            /* healthBar.fillAmount = currentHealth / 100.0f;*/
     }
 
-   /* public void Heal(int healingAmount)
+    public void Heal(int healingAmount)
     {
         currentHealth += healingAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, 100);
 
-        *//*healthBar.fillAmount = currentHealth / 100f;*//*
         healthBar.SetHealth(currentHealth);
 
-    }*/
+    }
 
     public IEnumerator InvincibilityFlash()
     {
@@ -137,14 +123,8 @@ public class playerHealth : MonoBehaviour
 
         if (collision.tag == "HP")
         {
-            currentHealth += 20;
+            currentHealth += 40;
         }
-
-        if (collision.tag == "HP2")
-        {
-            currentHealth += 100;
-        }
-
 
     }
     private void OnTriggerExit2D(Collider2D collision)

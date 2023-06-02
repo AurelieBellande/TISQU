@@ -25,60 +25,33 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* if (collision.tag == "enemy")
-          {
-              TakeDamage(20);
-          }*/
-
         if (healthAmount <= 0)
         {
-            // Disable the current GameObject (enemy)
-            transform.root.gameObject.SetActive(false);
+            DefeatBoss();
         }
 
         /*if (healthAmount <= 0)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-            foreach (GameObject enemy in enemies)
-            {
-                Destroy(enemy);
-            }
+            // Disable the current GameObject (enemy)
+            transform.root.gameObject.SetActive(false);
         }*/
 
-        
-        
-            if (anim != null && healthAmount <= 0)
-            {
-                anim.SetTrigger("Death");
-            }
-            GameObject[] boss = GameObject.FindGameObjectsWithTag("Boss");
-            foreach (GameObject Boss in boss)
-            {
-                Destroy(Boss);
 
-            }
-              
-        
+        if (anim != null && healthAmount <= 0)
+        {
+            anim.SetTrigger("Death");
+        }
+        /*GameObject[] boss = GameObject.FindGameObjectsWithTag("Boss");
+        foreach (GameObject Boss in boss)
+        {
+            Destroy(Boss);
 
+        }*/
         if (anim!= null && healthAmount == 50)
         {
             anim.SetBool("Attack2", true);
         }
 
-       /* if (healthAmount <= 0)
-        {
-            if (anim != null)
-                anim.SetTrigger("Death");
-
-            if (boss != null)
-                Destroy(boss.gameObject);
-
-            Destroy(gameObject);
-            Debug.Log("blah");
-
-
-
-        }*/
     }
 
     public void TakeDamage(float damageAmount)
@@ -96,8 +69,11 @@ public class HealthManager : MonoBehaviour
         }*/
        
     }
+    public void DefeatBoss()
+    {
+        transform.root.gameObject.SetActive(false);
+    }
 
-    
 
     public void SetMaxHealth(int health)
     {

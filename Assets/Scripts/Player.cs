@@ -4,23 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{   
+{
+    public playerKick playerkick;
     public float jetpackForce = 30.0f;
     bool jetpackActive;
     bool firstinput = true;
     public float hovertime = 3;
     bool canjetpack;
 
-    /*bool fall = false;
-bool jumpd = false;*/
     bool grounded = false;
     int CountJump = 1;
 
     private int m_currentAttack = 0;
     private float m_timeSinceAttack = 0.0f;
     private float m_delayToIdle = 0.0f;
-    /*private bool m_grounded = false;
-*/
+    
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator animController;
@@ -42,8 +40,9 @@ bool jumpd = false;*/
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animController = GetComponent<Animator>();
+        playerkick = GetComponent<playerKick>();
         //Debug.Log(Mathf.Lerp(current, target, 0));
-        /*grounded = true;*/    
+        /*grounded = true;*/
     }
 
     private void Awake()
@@ -145,6 +144,11 @@ bool jumpd = false;*/
             if (m_delayToIdle < 0)
                 animController.SetInteger("AnimState", 0);
             Debug.Log("idl");
+        }
+
+        if (Input.GetKeyDown("r"))
+        {
+            playerkick.PerformKick();
         }
 
     }

@@ -11,7 +11,7 @@ public class enmy : MonoBehaviour
     [SerializeField] Transform[] wayPoints;
     public HealthManager healthBar2;
 
-    /*float healthAmount = 100;*/
+    float healthAmount = 100;
     float horizontal_value;
 
     Rigidbody2D rb;
@@ -60,10 +60,10 @@ public class enmy : MonoBehaviour
         if (horizontal_value > 0) sr.flipX = false;
         else if (horizontal_value < 0) sr.flipX = true;
 
-        /*if (healthAmount <= 0)
+        if (healthAmount <= 0)
         {
             Destroy(gameObject);
-        }*/
+        }
 
     }
 
