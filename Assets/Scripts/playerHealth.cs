@@ -139,6 +139,7 @@ public class playerHealth : MonoBehaviour
         if (collision.tag != "enemy")
         {
             onspider = false;
+            Debug.Log("onspider false");
         }
 
 

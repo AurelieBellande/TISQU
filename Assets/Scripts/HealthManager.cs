@@ -41,12 +41,15 @@ public class HealthManager : MonoBehaviour
         {
             anim.SetTrigger("Death");
         }
-        /*GameObject[] boss = GameObject.FindGameObjectsWithTag("Boss");
-        foreach (GameObject Boss in boss)
+        if (healthAmount <= 0)
         {
-            Destroy(Boss);
+            GameObject[] Enemies = GameObject.FindGameObjectsWithTag("enemy");
+            foreach (GameObject enemy in Enemies)
+            {
+                Destroy(enemy);
 
-        }*/
+            }
+        }
         if (anim!= null && healthAmount == 50)
         {
             anim.SetBool("Attack2", true);
